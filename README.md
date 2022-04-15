@@ -8,12 +8,6 @@
 
 :warning: - some variations of the command are not supported
 
-:running: - work in progress
-
-:arrow_down: - command is low priority; open an issue (or thumbs up the relevant issue) if you want to see it sooner
-
-:x: - command impossible with current VSCode API
-
 :1234: - command accepts numeric prefix
 
 ## Roadmap
@@ -57,9 +51,8 @@ Now follows an exhaustive list of every known Vim command that we could find.
 | :white_check_mark: | :1234: \$      | to the last character in the line (N-1 lines lower) (also: End key)            |
 | :white_check_mark: | g0             | to first character in screen line (differs from "0" when lines wrap)           |
 | :white_check_mark: | g^             | to first non-blank character in screen line (differs from "^" when lines wrap) |
-| :white_check_mark: | :1234: g\$     | to last character in screen line (differs from "\$" when lines wrap)           |
+| :white_check_mark: | g\$            | to last character in screen line (differs from "\$" when lines wrap)           |
 | :white_check_mark: | gm             | to middle of the screen line                                                   |
-| :white_check_mark: | :1234: \|      | to column N (default: 1)                                                       |
 | :white_check_mark: | :1234: f{char} | to the Nth occurrence of {char} to the right                                   |
 | :white_check_mark: | :1234: F{char} | to the Nth occurrence of {char} to the left                                    |
 | :white_check_mark: | :1234: t{char} | till before the Nth occurrence of {char} to the right                          |
@@ -75,7 +68,6 @@ Now follows an exhaustive list of every known Vim command that we could find.
 | :white_check_mark: | :1234: j  | down N lines (also: CTRL-J, CTRL-N, NL, and Down)                                         |
 | :white_check_mark: | :1234: -  | up N lines, on the first non-blank character                                              |
 | :white_check_mark: | :1234: +  | down N lines, on the first non-blank character (also: CTRL-M and CR)                      |
-| :white_check_mark: | :1234: \_ | down N-1 lines, on the first non-blank character                                          |
 | :white_check_mark: | :1234: G  | goto line N (default: last line), on the first non-blank character                        |
 | :white_check_mark: | :1234: gg | goto line N (default: first line), on the first non-blank character                       |
 | :white_check_mark: | :1234: %  | goto line N percentage down in the file; N must be given, otherwise it is the `%` command |
@@ -84,36 +76,24 @@ Now follows an exhaustive list of every known Vim command that we could find.
 
 ## Text object motions
 
-| Status             | Command    | Description                                                 |
-| ------------------ | ---------- | ----------------------------------------------------------- |
-| :white_check_mark: | :1234: w   | N words forward                                             |
-| :white_check_mark: | :1234: W   | N blank-separated WORDs forward                             |
-| :white_check_mark: | :1234: e   | N words forward to the end of the Nth word                  |
-| :white_check_mark: | :1234: E   | N words forward to the end of the Nth blank-separated WORD  |
-| :white_check_mark: | :1234: b   | N words backward                                            |
-| :white_check_mark: | :1234: B   | N blank-separated WORDs backward                            |
-| :white_check_mark: | :1234: ge  | N words backward to the end of the Nth word                 |
-| :white_check_mark: | :1234: gE  | N words backward to the end of the Nth blank-separated WORD |
-| :white_check_mark: | :1234: )   | N sentences forward                                         |
-| :white_check_mark: | :1234: (   | N sentences backward                                        |
-| :white_check_mark: | :1234: }   | N paragraphs forward                                        |
-| :white_check_mark: | :1234: {   | N paragraphs backward                                       |
-| :white_check_mark: | :1234: ]]  | N sections forward, at start of section                     |
-| :white_check_mark: | :1234: [[  | N sections backward, at start of section                    |
-| :white_check_mark: | :1234: ][  | N sections forward, at end of section                       |
-| :white_check_mark: | :1234: []  | N sections backward, at end of section                      |
-| :white_check_mark: | :1234: [(  | N times back to unclosed '('                                |
-| :white_check_mark: | :1234: [{  | N times back to unclosed '{'                                |
-| :arrow_down:       | :1234: [m  | N times back to start of method (for Java)                  |
-| :arrow_down:       | :1234: [M  | N times back to end of method (for Java)                    |
-| :white_check_mark: | :1234: ])  | N times forward to unclosed ')'                             |
-| :white_check_mark: | :1234: ]}  | N times forward to unclosed '}'                             |
-| :arrow_down:       | :1234: ]m  | N times forward to start of method (for Java)               |
-| :arrow_down:       | :1234: ]M  | N times forward to end of method (for Java)                 |
-| :arrow_down:       | :1234: [#  | N times back to unclosed "#if" or "#else"                   |
-| :arrow_down:       | :1234: ]#  | N times forward to unclosed "#else" or "#endif"             |
-| :arrow_down:       | :1234: [\* | N times back to start of a C comment "/\*"                  |
-| :arrow_down:       | :1234: ]\* | N times forward to end of a C comment "\*/"                 |
+| Status             | Command   | Description                                                 |
+| ------------------ | --------- | ----------------------------------------------------------- |
+| :white_check_mark: | :1234: w  | N words forward                                             |
+| :white_check_mark: | :1234: W  | N blank-separated WORDs forward                             |
+| :white_check_mark: | :1234: e  | N words forward to the end of the Nth word                  |
+| :white_check_mark: | :1234: E  | N words forward to the end of the Nth blank-separated WORD  |
+| :white_check_mark: | :1234: b  | N words backward                                            |
+| :white_check_mark: | :1234: B  | N blank-separated WORDs backward                            |
+| :white_check_mark: | :1234: ge | N words backward to the end of the Nth word                 |
+| :white_check_mark: | :1234: gE | N words backward to the end of the Nth blank-separated WORD |
+| :white_check_mark: | :1234: }  | N paragraphs forward                                        |
+| :white_check_mark: | :1234: {  | N paragraphs backward                                       |
+| :white_check_mark: | :1234: ]] | N sections forward, at start of section                     |
+| :white_check_mark: | :1234: [[ | N sections backward, at start of section                    |
+| :white_check_mark: | :1234: [( | N times back to unclosed '('                                |
+| :white_check_mark: | :1234: [{ | N times back to unclosed '{'                                |
+| :white_check_mark: | :1234: ]) | N times forward to unclosed ')'                             |
+| :white_check_mark: | :1234: ]} | N times forward to unclosed '}'                             |
 
 ## Pattern searches
 
