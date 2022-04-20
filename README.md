@@ -88,8 +88,6 @@ Now follows an exhaustive list of every known Vim command that we could find.
 | :white_check_mark: | :1234: gE | N words backward to the end of the Nth blank-separated WORD |
 | :white_check_mark: | :1234: }  | N paragraphs forward                                        |
 | :white_check_mark: | :1234: {  | N paragraphs backward                                       |
-| :white_check_mark: | :1234: ]] | N sections forward, at start of section                     |
-| :white_check_mark: | :1234: [[ | N sections backward, at start of section                    |
 | :white_check_mark: | :1234: [( | N times back to unclosed '('                                |
 | :white_check_mark: | :1234: [{ | N times back to unclosed '{'                                |
 | :white_check_mark: | :1234: ]) | N times forward to unclosed ')'                             |
