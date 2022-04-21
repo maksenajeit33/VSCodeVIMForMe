@@ -95,31 +95,27 @@ Now follows an exhaustive list of every known Vim command that we could find.
 
 ## Pattern searches
 
-| Status                    | Command                            | Description                                            | Note                                                                            |
-| ------------------------- | ---------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
-| :white_check_mark: :star: | :1234: `/{pattern}[/[offset]]<CR>` | search forward for the Nth occurrence of {pattern}     | Currently we only support JavaScript Regex but not Vim's in-house Regex engine. |
-| :white_check_mark: :star: | :1234: `?{pattern}[?[offset]]<CR>` | search backward for the Nth occurrence of {pattern}    | Currently we only support JavaScript Regex but not Vim's in-house Regex engine. |
-| :warning:                 | :1234: `/<CR>`                     | repeat last search, in the forward direction           | {count} is not supported.                                                       |
-| :warning:                 | :1234: `?<CR>`                     | repeat last search, in the backward direction          | {count} is not supported.                                                       |
-| :white_check_mark:        | :1234: n                           | repeat last search                                     |
-| :white_check_mark:        | :1234: N                           | repeat last search, in opposite direction              |
-| :white_check_mark:        | :1234: \*                          | search forward for the identifier under the cursor     |
-| :white_check_mark:        | :1234: #                           | search backward for the identifier under the cursor    |
-| :white_check_mark:        | :1234: g\*                         | like "\*", but also find partial matches               |
-| :white_check_mark:        | :1234: g#                          | like "#", but also find partial matches                |
-| :white_check_mark:        | gd                                 | goto local declaration of identifier under the cursor  |
-| :arrow_down:              | gD                                 | goto global declaration of identifier under the cursor |
+| Status                    | Command                            | Description                                           | Note                                                                            |
+| ------------------------- | ---------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------- |
+| :white_check_mark: :star: | :1234: `/{pattern}[/[offset]]<CR>` | search forward for the Nth occurrence of {pattern}    | Currently we only support JavaScript Regex but not Vim's in-house Regex engine. |
+| :white_check_mark: :star: | :1234: `?{pattern}[?[offset]]<CR>` | search backward for the Nth occurrence of {pattern}   | Currently we only support JavaScript Regex but not Vim's in-house Regex engine. |
+| :warning:                 | :1234: `/<CR>`                     | repeat last search, in the forward direction          | {count} is not supported.                                                       |
+| :warning:                 | :1234: `?<CR>`                     | repeat last search, in the backward direction         | {count} is not supported.                                                       |
+| :white_check_mark:        | :1234: n                           | repeat last search                                    |
+| :white_check_mark:        | :1234: N                           | repeat last search, in opposite direction             |
+| :white_check_mark:        | :1234: \*                          | search forward for the identifier under the cursor    |
+| :white_check_mark:        | :1234: #                           | search backward for the identifier under the cursor   |
+| :white_check_mark:        | :1234: g\*                         | like "\*", but also find partial matches              |
+| :white_check_mark:        | :1234: g#                          | like "#", but also find partial matches               |
+| :white_check_mark:        | gd                                 | goto local declaration of identifier under the cursor |
 
 ## Marks and motions
 
 | Status             | Command             | Description                                            |
 | ------------------ | ------------------- | ------------------------------------------------------ |
-| :white_check_mark: | m{a-zA-Z}           | mark current position with mark {a-zA-Z}               |
-| :white_check_mark: | `{a-z}              | go to mark {a-z} within current file                   |
-| :white_check_mark: | `{A-Z}              | go to mark {A-Z} in any file                           |
-| :white_check_mark: | `{0-9}              | go to the position where Vim was previously exited     |
-| :white_check_mark: | ``                  | go to the position before the last jump                |
-| :arrow_down:       | `"                  | go to the position when last editing this file         |
+| :white_check_mark: | m{a-zA-Z0-9}        | mark current position with mark {a-zA-Z}               |
+| :white_check_mark: | `{a-z0-9}           | go to mark {a-z} within current file                   |
+| :white_check_mark: | `{A-Z0-9}           | go to mark {A-Z} in any file                           |
 | :white_check_mark: | `[                  | go to the start of the previously operated or put text |
 | :white_check_mark: | '[                  | go to the start of the previously operated or put text |
 | :white_check_mark: | `]                  | go to the end of the previously operated or put text   |
