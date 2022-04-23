@@ -111,35 +111,26 @@ Now follows an exhaustive list of every known Vim command that we could find.
 
 ## Marks and motions
 
-| Status             | Command             | Description                                            |
-| ------------------ | ------------------- | ------------------------------------------------------ |
-| :white_check_mark: | m{a-zA-Z0-9}        | mark current position with mark {a-zA-Z}               |
-| :white_check_mark: | `{a-z0-9}           | go to mark {a-z} within current file                   |
-| :white_check_mark: | `{A-Z0-9}           | go to mark {A-Z} in any file                           |
-| :white_check_mark: | `[                  | go to the start of the previously operated or put text |
-| :white_check_mark: | '[                  | go to the start of the previously operated or put text |
-| :white_check_mark: | `]                  | go to the end of the previously operated or put text   |
-| :white_check_mark: | ']                  | go to the end of the previously operated or put text   |
-| :arrow_down:       | `<                  | go to the start of the (previous) Visual area          |
-| :arrow_down:       | `>                  | go to the end of the (previous) Visual area            |
-| :white_check_mark: | `.                  | go to the position of the last change in this file     |
-| :white_check_mark: | '.                  | go to the position of the last change in this file     |
-| :arrow_down:       | '{a-zA-Z0-9[]'"<>.} | same as `, but on the first non-blank in the line      |
-| :arrow_down:       | :marks              | print the active marks                                 |
-| :white_check_mark: | :1234: CTRL-O       | go to Nth older position in jump list                  |
-| :white_check_mark: | :1234: CTRL-I       | go to Nth newer position in jump list                  |
-| :arrow_down:       | :ju[mps]            | print the jump list                                    |
+| Status             | Command             | Description                                        |
+| ------------------ | ------------------- | -------------------------------------------------- |
+| :white_check_mark: | m{a-zA-Z0-9}        | mark current position with mark {a-zA-Z}           |
+| :white_check_mark: | `{a-z0-9}           | go to mark {a-z} within current file               |
+| :white_check_mark: | `{A-Z0-9}           | go to mark {A-Z} in any file                       |
+| :white_check_mark: | `.                  | go to the position of the last change in this file |
+| :white_check_mark: | '.                  | go to the position of the last change in this file |
+| :arrow_down:       | '{a-zA-Z0-9[]'"<>.} | same as `, but on the first non-blank in the line  |
+| :arrow_down:       | :marks              | print the active marks                             |
+| :white_check_mark: | :1234: CTRL-O       | go to Nth older position in jump list              |
+| :white_check_mark: | :1234: CTRL-I       | go to Nth newer position in jump list              |
+| :arrow_down:       | :ju[mps]            | print the jump list                                |
 
 ## Various motions
 
-| Status             | Command             | Description                                                                                        |
-| ------------------ | ------------------- | -------------------------------------------------------------------------------------------------- |
-| :white_check_mark: | %                   | find the next brace, bracket, comment, or "#if"/ "#else"/"#endif" in this line and go to its match |
-| :white_check_mark: | :1234: H            | go to the Nth line in the window, on the first non-blank                                           |
-| :white_check_mark: | M                   | go to the middle line in the window, on the first non-blank                                        |
-| :white_check_mark: | :1234: L            | go to the Nth line from the bottom, on the first non-blank                                         |
-| :arrow_down:       | :1234: go           | go to Nth byte in the buffer                                                                       |
-| :arrow_down:       | :[range]go[to][off] | go to [off] byte in the buffer                                                                     |
+| Status             | Command  | Description                                                 |
+| ------------------ | -------- | ----------------------------------------------------------- |
+| :white_check_mark: | :1234: H | go to the Nth line in the window, on the first non-blank    |
+| :white_check_mark: | M        | go to the middle line in the window, on the first non-blank |
+| :white_check_mark: | :1234: L | go to the Nth line from the bottom, on the first non-blank  |
 
 ## Using tags
 
@@ -180,15 +171,6 @@ The following are all marked low priority because VSCode has very good support f
 | :white_check_mark: | z CR or zt    | redraw, current line at top of window          |
 | :white_check_mark: | z. or zz      | redraw, current line at center of window       |
 | :white_check_mark: | z- or zb      | redraw, current line at bottom of window       |
-
-These only work when 'wrap' is off:
-
-| Status                    | Command   | Description                                   | Note                                                                                                           |
-| ------------------------- | --------- | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| :white_check_mark: :star: | :1234: zh | scroll screen N characters to the right       | In Code, the cursor will always move when you run this command, whether the horizontal scrollbar moves or not. |
-| :white_check_mark: :star: | :1234: zl | scroll screen N characters to the left        | As above                                                                                                       |
-| :white_check_mark: :star: | :1234: zH | scroll screen half a screenwidth to the right | As above                                                                                                       |
-| :white_check_mark: :star: | :1234: zL | scroll screen half a screenwidth to the left  | As above                                                                                                       |
 
 ## Inserting text
 
